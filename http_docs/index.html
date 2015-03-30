@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag it, drop it, click &amp; save it</title>
+    <link rel="stylesheet" href="assets/css/app.css" />
+    <link rel="stylesheet" href="bower_components/prism/themes/prism-funky.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </head>
+  <body>
+    
+    <header class="fixed">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">Drag it, drop it, click &amp; save it.</a></h1>
+          </li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li><a href="#" class="new" data-reveal-id="newModal">New Project</a></li>
+            <li><a href="#" class="save">Save Project</a></li>
+            <li><a href="#" class="help">Help</a></li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+          <a href="#panel1">Headers</a>
+          <div id="panel1" class="content active">
+
+            <article class="header1">
+              <img src="assets/img/header1.jpg" alt="header 1">
+                <p><strong>Header 1</strong></p>
+            </article>
+
+            <article class="header2">
+              <img src="assets/img/header2.jpg" alt="header 2">
+                <p><strong>Header 2</strong></p>
+            </article>
+
+            <article class="header3">
+              <img src="assets/img/header3.jpg" alt="header 3">
+              <p><strong>Header 3</strong></p>
+            </article>
+
+          </div>
+        </li>
+        <li class="accordion-navigation">
+          <a href="#panel2">Main Content</a>
+          <div id="panel2" class="content">
+
+            <article class="main1">
+              <img src="assets/img/main1.jpg" alt="main 1">
+              <p><strong>Main Content Area</strong></p>
+            </article>
+
+            <article class="main2">
+              <img src="assets/img/main2.jpg" alt="main 2">
+              <p><strong>Main Content Area</strong></p>
+            </article>
+
+            <article class="main3">
+              <img src="assets/img/main3.jpg" alt="main 3">
+              <p><strong>Main Content Area</strong></p>
+            </article>
+
+          </div>
+        </li>
+        <li class="accordion-navigation">
+          <a href="#panel3">Footers</a>
+          <div id="panel3" class="content">
+
+            <article class="footer1">
+              <img src="assets/img/footer1.jpg" alt="footer 1">
+              <p><strong>Footer 1</strong></p>
+            </article>
+
+            <article class="footer2">
+              <img src="assets/img/footer2.jpg" alt="footer 2">
+              <p><strong>Footer 2</strong></p>
+            </article>
+
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+
+      <ul class="tabs" data-tab>
+        <li class="tab-title active"><a href="#tab1">Builder</a></li>
+        <li class="tab-title"><a href="#tab2">Code</a></li>
+      </ul>
+
+      <div class="tabs-content">
+        <div class="content active" id="tab1">
+          <div class="builder"></div>
+        </div>
+        <div class="content" id="tab2">
+          <pre><code class="language-markup"> </code></pre>
+        </div>
+      </div>
+
+    </main>
+    
+    <footer class="row">
+      <p>&copy; 2015. Nick Rutten</p>
+    </footer>
+
+    <div id="newModal" class="reveal-modal small" data-reveal>
+      <h3 id="newModalTitle">New Project</h3>
+      <p>Give your site a name and click the button to get started.</p>
+      <form action="">
+        <input type="text" name="sitename">
+        <input type="submit" class="button" value="Create new site">
+      </form>
+    </div>
+
+    <div id="createFirst" class="reveal-modal small" data-reveal>
+      <h3 id="createFirstTitle">You've made a whoopsie.</h3>
+      <p>Create a new project first. Click the button in the top right corner.</p>
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/prism/prism.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

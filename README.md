@@ -1,29 +1,25 @@
-# Foundation libsass template
+# Site Builder
 
-This is a template to start your own project that uses Grunt and libsass!
+## Running
 
-## Requirements
+1. Install [Vagrant](http://vagrantup.com)
+2. Download or clone this repo.
+3. Navigate to the repo folder.
+4. Run `vagrant up`
+5. Navigate to [192.168.50.4](http://192.168.50.4/) in the browser.
 
-You'll need to have the following items installed before continuing.
+## Hacking
 
-  * [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
-  * [Grunt](http://gruntjs.com/): Run `[sudo] npm install -g grunt-cli`
-  * [Bower](http://bower.io): Run `[sudo] npm install -g bower`
+Make sure the latest version of node and browsersync are installed.
 
-## Quickstart
+1. Install [Vagrant](http://vagrantup.com)
+2. Download or clone this repo.
+3. Navigate to the repo folder.
+4. Run `vagrant up`
+5. Navigate to http_docs in the repo folder.
+6. Run `npm install` and `bower install`.
+7. Run `grunt` to build files and refresh browser automatically.
+8. Navigate to [192.168.50.4](http://192.168.50.4/) in the browser.
+9. Open in your favorite editor to hack.
 
-```bash
-git clone git@github.com:zurb/foundation-libsass-template.git
-npm install && bower install
-```
-
-While you're working on your project, run:
-
-`grunt`
-
-And you're set!
-
-## Directory Structure
-
-  * `scss/_settings.scss`: Foundation configuration settings go in here
-  * `scss/app.scss`: Application styles go here
+Copyleft under the MIT License.

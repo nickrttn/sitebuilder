@@ -1,0 +1,66 @@
+@import "settings";
+@import "foundation";
+
+// VARIABLES
+
+// Colors
+$white: rgba(255, 255, 255, 1);
+$darkgrey: rgba(51, 51, 51, 1);
+
+code {
+	border: none;
+}
+
+// STYLES
+
+// bron: http://codepen.io/abdots/pen/zxloI
+.sidebar {
+	position: fixed;
+	width: rem-calc(260);
+	left: 0;
+	bottom: 2.8125rem;
+	top: 2.8125rem;
+	color: $white;
+	background-color: lighten($darkgrey, 5%);
+
+	.accordion {
+		margin-left: 0;
+		.content.active {
+			background-color: lighten($darkgrey, 5%);
+		}
+		.accordion-navigation {
+			a {
+				background-color: lighten($darkgrey, 3%);
+				color: $white;
+			}
+		}
+	}
+
+	.code {
+		display: none;
+	}
+}
+
+main {
+	float: left;
+	margin-left: rem-calc(260);
+	background-color: $white;
+
+	.builder {
+		max-width: rem-calc(1180);
+		margin-bottom: 2.8125rem;
+	}
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 2.8125rem;
+	background-color: $darkgrey;
+	padding-left: 1rem;
+	p {
+		line-height: 2.8125rem;
+		color: $white;
+	}
+}

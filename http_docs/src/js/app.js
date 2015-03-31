@@ -8,6 +8,7 @@ $(document).foundation();
 
 // Initialize variables
 var mySite;
+var siteIsCreated = false;
 
 // UI components I need to use for click handlers or to add content to
 var newButton 	= document.querySelector('#newModal input[type="submit"');
@@ -35,6 +36,32 @@ function Site(name){
 	// change the title in the navbar
 	this.changeTitle = function(){
 		title.textContent = this.name;
+	};
+
+	// adds a stylesheet to the created page before saving to 
+	// prevent UI problems
+	// Bron: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
+	this.addStylesheet = function(){
+		var parser = new DOMParser();
+		doc = parser.parseFromString(this.content, 'text/html');
+
+		var head = doc.querySelector('head').innerHTML;
+		head +=  '	<link type="text/css" rel="stylesheet" href="snippets/css/foundation.css">';
+		
+		doc.querySelector('head').innerHTML = head;
+
+		this.content = doc.documentElement.innerHTML;
+	};
+
+	// opens the created page in a new window so the os-native save
+	// functions can be used to save it.
+	this.openToSave = function(){
+		var newWindow = window.open();
+		var doc = newWindow.document;
+
+		newWindow.document.open();
+		newWindow.document.write(this.content);
+		newWindow.document.close();
 	};
 
 	// add the code to the code-tab and make it pretty by highlighting it with prism.js
@@ -80,14 +107,24 @@ newButton.addEventListener('click', function(e){
 	var name = document.querySelector('[name="sitename"]').value;
 
 	mySite = new Site(name);
-	mySite.addContent('');
+	mySite.addContent(null);
 	mySite.changeTitle();
+
+	siteIsCreated = mySite instanceof Site;
+	console.log(siteIsCreated);
 
 	$('#newModal').foundation('reveal', 'close');
 });
 
+
+// save button opens the site in a new window where it
+// can be saved using the os-native save box
 saveButton.addEventListener('click', function(e){
 	e.preventDefault();
+	if (siteIsCreated){
+		mySite.addStylesheet();
+		mySite.openToSave();
+	}
 });
 
 // add an event listener to the entire sidebar,
@@ -99,7 +136,6 @@ sidebar.addEventListener('click', function(e){
 	var parent = e.target.parentNode;
 	var snippet = parent.classList[0];
 	var tag = e.target.parentNode.nodeName;
-	var siteIsCreated = mySite instanceof Site;
 
 	if (siteIsCreated && tag === 'ARTICLE'){
 		mySite.loadContent(mySite, mySite.snippets[snippet], mySite.addContent);

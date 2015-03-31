@@ -85,6 +85,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('build', ['sass', 'uglify', 'imagemin']);
+  grunt.registerTask('build', ['sass', /*'uglify',*/ 'imagemin']);
   grunt.registerTask('default', ['browserSync', 'watch']);
 };

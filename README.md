@@ -1,5 +1,7 @@
 # Site Builder
 
+This site needs a server to be able to perform AJAX requests. Please run it from a VM install. Instructions below.
+
 ## Running
 
 1. Install [Vagrant](http://vagrantup.com)
